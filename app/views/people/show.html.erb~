@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @person.first_name -%><%=  @person.last_name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= number_to_phone(@person.number) %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @person.email %>
+</p>
+
+<p>
+  <b>Postal code:</b>
+  <%= @person.postal_code %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @person.city %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @person.role %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

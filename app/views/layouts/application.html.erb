@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practise</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+  <div id="header">
+    <h1>VolunSold</h1>
+  </div>
+<!--  Main section-->
+  <div id="main-body">
+    <div id="sidebar">
+      Sidebar wondericks
+      <%= form_tag(search_people_path, :method => "get") do %>
+	<%= label_tag(:term, "Search for") %>
+	<%= text_field_tag(:term) %>
+	<%= submit_tag("Search") %>
+      <% end %> 
+    </div>
+    <div id="content">
+      <p> <%= flash[:notice] %></p>
+      <%= yield %>
+    </div>
+  </div>
+<!--  Footer-->
+  <div id="footer">
+    Powered by Rails
+  </div>
+
+</body>
+</html>
