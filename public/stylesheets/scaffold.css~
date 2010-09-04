@@ -103,18 +103,19 @@ ul, ol {
 }
 
 #main-body {
-/* 	width: 60em; */
+	width: 97%;
 	margin: 10px auto;
 }
 
 #sidebar {
   width: 15em;
   float: left;
+  height: 100%;
 }
 
 #content {
-/*   width: 80em; */
-  float: left;
+  width: 80%; 
+  float: none;
   padding: 1em;
   margin-left: 1em;
   background: #fff;
@@ -135,7 +136,7 @@ ul, ol {
 }
 
 #content .list-odd {
-  background: #A9D0F5;
+  background: #CEE3F6;
 }
 
 #content .list-even {

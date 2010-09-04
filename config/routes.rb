@@ -1,5 +1,7 @@
 Practise::Application.routes.draw do |map|
   
+  resources :users
+
   root :to => 'people#index'
 #   map.search :to => 'people#search'
   
@@ -10,4 +12,5 @@ Practise::Application.routes.draw do |map|
  
    match 'search/:term' => 'people#search'
   
+   resource  :session
 end

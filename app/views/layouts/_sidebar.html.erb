@@ -1,0 +1,13 @@
+<%= form_tag(search_people_path, :method => "get") do %>
+  <%= label_tag(:term, "Search for") %>
+  <%= text_field_tag(:term) %>
+  <%= submit_tag("Search") %>
+<% end %> 
+<br />
+<p>
+<% if logged_in? %>
+  Hello <%= user_name %>
+  <%= link_to "Logout?", session_path, {:method => :delete} %>
+<% else %>
+  <%= link_to "Login", new_session_path -%> or <%= link_to "Sign up", new_user_path %>
+<% end %>

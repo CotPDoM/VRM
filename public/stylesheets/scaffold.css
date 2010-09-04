@@ -103,17 +103,18 @@ ul, ol {
 }
 
 #main-body {
-/* 	width: 60em; */
+	width: 97%;
 	margin: 10px auto;
 }
 
 #sidebar {
   width: 15em;
   float: left;
+  height: 100%;
 }
 
 #content {
-/*   width: 80em; */
+  width: 80%; 
   float: left;
   padding: 1em;
   margin-left: 1em;

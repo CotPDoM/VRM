@@ -15,11 +15,7 @@
   <div id="main-body">
     <div id="sidebar">
       Sidebar wondericks
-      <%= form_tag(search_people_path, :method => "get") do %>
-	<%= label_tag(:term, "Search for") %>
-	<%= text_field_tag(:term) %>
-	<%= submit_tag("Search") %>
-      <% end %> 
+      <%= render "layouts/sidebar" %>
     </div>
     <div id="content">
       <p> <%= flash[:notice] %></p>

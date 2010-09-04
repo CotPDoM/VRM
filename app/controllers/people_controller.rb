@@ -22,13 +22,15 @@ class PeopleController < ApplicationController
   end
   
   def search
-    @people = Person.search(params[:term])
-   if @people == []
-     flash.now[:notice] = "No Search Results Found"
-   end
-    respond_to do |format|
-      format.html { render :action => :index}
-#       format.xml  { render :xml => @events }
+    unless params[:term] == nil 
+      @people = Person.search(params[:term])
+      if @people == []
+	flash.now[:notice] = "No Search Results Found"
+      end
+    end
+     respond_to do |format|
+       format.html { render :action => :index}
+#      format.xml  { render :xml => @events }
     end
   end
 
