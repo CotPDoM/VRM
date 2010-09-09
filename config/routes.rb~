@@ -1,16 +1,26 @@
 Practise::Application.routes.draw do |map|
   
+  root :to => 'people#index'  
+  
   resources :users
-
-  root :to => 'people#index'
-#   map.search :to => 'people#search'
+  match 'create' => 'sessions#create', :as => :create, :method => :post
+  resource  :session do
+    member do
+      post :create
+    end
+  end
+    
+   match 'login' => 'sessions#new', :as => :login
+   match 'logout' => 'sessions#destroy', :as => :logout
   
   resources :people do
-    get :search, :on => :collection
+    collection do 
+      get :search
+    end
   end
   
  
    match 'search/:term' => 'people#search'
   
-   resource  :session
+    
 end

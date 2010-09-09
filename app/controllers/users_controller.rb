@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :authorize, :except => [:new, :create]
+  
   # GET /users
   # GET /users.xml
   def index
@@ -44,6 +47,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+	session[:user_id]=@user.id
         format.html { redirect_to(:root, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else

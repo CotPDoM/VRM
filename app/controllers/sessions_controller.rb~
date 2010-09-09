@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   
   def new
+    render :action => :new
   end
 
 
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
     user=User.authenticate(params[:email], params[:password])
     if user
       session[:user_id]=user.id
-      redirect_to root, :notice => "Welcome back, #{user.name}!"
+      redirect_to root_url, :notice => "Welcome back, #{user.name}!"
     else
       flash[:error] = "Invalid email/password combination!"
       render :action => :new

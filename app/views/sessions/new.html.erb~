@@ -1,13 +1,5 @@
 <h1>Login</h1>
-<br />
-
-
-
-
-
-
-
-<%= form_tag session_path do %>
+<%= form_tag (sessions_path, {:method => :post} ) do %>
   <fieldset>
     <p> 
       <label for "email"> E-mail</label>

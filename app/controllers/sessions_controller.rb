@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   
   def new
+    render :action => :new
   end
 
 
@@ -17,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id]= nil
-    redirect_to people_url, :notice => "You've been logged out."
+    redirect_to root_url, :notice => "You've been logged out."
   end
 end

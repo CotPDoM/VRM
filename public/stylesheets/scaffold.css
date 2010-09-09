@@ -7,7 +7,7 @@
  * combination in your applications.
  */
 
-@import "/stylesheets/ie.css";
+/* @import "/stylesheets/ie.css"; */
 
 * {
  	margin: 0;
@@ -101,6 +101,8 @@ ul, ol {
   border-bottom: 3px solid #195e92;
   font-size: 110%;
 }
+
+#header.a{ color : black;}
 
 #main-body {
 	width: 97%;

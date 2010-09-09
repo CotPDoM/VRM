@@ -9,13 +9,13 @@
 
 <body>
   <div id="header">
-    <h1>VolunSold</h1>
+    <%= link_to root_url do %><h1>VolunSold</h1><% end %>
   </div>
 <!--  Main section-->
   <div id="main-body">
     <div id="sidebar">
       Sidebar wondericks
-      <%= render "sidebar" %>
+      <%= render "layouts/sidebar" %>
     </div>
     <div id="content">
       <p> <%= flash[:notice] %></p>

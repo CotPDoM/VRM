@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :authorize#, :except => [:session_url]
+  before_filter :authorize, :except => [:login, :new, :create]
   
   helper_method :logged_in?, :current_user, :user_name
   
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
     def authorize
       unless session[:user_id]
-	render new_session_path, :notice => "Please log in"
+	redirect_to login_url, :notice => "Please log in"
       end
     end
     

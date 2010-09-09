@@ -22,7 +22,7 @@ class PeopleController < ApplicationController
   end
   
   def search
-    unless params[:term] != nil 
+    unless params[:term] == nil 
       @people = Person.search(params[:term])
       if @people == []
 	flash.now[:notice] = "No Search Results Found"
