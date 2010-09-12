@@ -1,6 +1,6 @@
 <h1 style="display:inline">Listing people</h1>
 <% if session[:term] -%>
-  <div style="display:inline">Search= <span id="search_term"><%=session[:term]-%></span><%= button_to "clear", :action => :clear_search, :style=>"display:inherit" %></div>
+  Search= <span id="search_term"><%=session[:term] -%></span> <%= link_to (clear_search_people_path, :method=>:post) do %><%= image_tag('/images/icons/cancel.png') %><small>Clear Search</small><% end %>
 <% end -%>
 
 <table>
