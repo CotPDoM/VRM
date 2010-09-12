@@ -1,7 +1,6 @@
 <h1 style="display:inline">Listing people</h1>
 <% if session[:term] -%>
-  <div style="display:inline">Search= <span id="search_term"><%=session[:term]-%> </span>
-  <%= button_to "clear", :action => :clear_search %></div>
+  <div style="display:inline">Search= <span id="search_term"><%=session[:term]-%></span><%= button_to "clear", :action => :clear_search, :style=>"display:inherit" %></div>
 <% end -%>
 
 <table>
@@ -16,19 +15,18 @@
 
   <% @people.each do |person| %>
     <tr class="<%= cycle('list-odd', 'list-even') %>">
-      <td><%= person.first_name %></td>
-      <td><%= person.last_name %></td>
-      <td><%= person.number %></td>
-      <td><%= person.email %></td>
-      <td><%= person.postal_code %></td>
-      <td><%= person.city %></td>
-      <td><%= person.role %></td>
-      <td><%= link_to 'Show', person %></td>
-      <td><%= link_to 'Edit', edit_person_path(person) %></td>
-      <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to person.first_name, person %> </td>
+      <td><%= person.last_name %> </td>
+      <td><%= number_to_phone(person.number) %> </td>
+      <td><%= person.email %> </td>
+      <td><%= person.postal_code %> </td>
+      <td><%= person.city %> </td>
+      <td><%= person.role %> </td>
+      
+      <td><%= link_to edit_person_path(person) do %><%= image_tag('/images/icons/pencil.png') %><% end %></td>
+      <td><%= link_to person, :confirm => 'Are you sure?', :method => :delete do %><%= image_tag('/images/icons/delete.png') %><% end %></td>
     </tr>
   <% end %>
-
 </table>
 <br />
 <%= link_to 'New Person', new_person_path %>

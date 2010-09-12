@@ -120,7 +120,7 @@ ul, ol {
 }
 
 #content {
-  width: 80%; 
+/*	width: 80%;  */
   float: left;
   padding: 1em;
   margin-left: 1em;
@@ -137,12 +137,20 @@ ul, ol {
 }
 
 #content td {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 #content .list-odd {
   background: #CEE3F6;
+}
+
+#content .list-odd a{
+  color:black;
+}
+
+#content .list-even a{
+  color:black;
 }
 
 #content .list-even {
@@ -153,6 +161,7 @@ ul, ol {
   background-color: #F2F5A9;
   border: 1px solid #424242;
   padding: 2px;
+  display:inline-block;
 }
 #footer {
 	color: #fff;
