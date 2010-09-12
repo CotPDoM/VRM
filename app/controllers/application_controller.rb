@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :authorize, :except => [:login, :new, :create]
-  before_filter :feedback_form
-  helper_method :logged_in?, :current_user, :user_name
+  helper_method :logged_in?, :current_user, :user_name, :feedback_form
   
   
   protected

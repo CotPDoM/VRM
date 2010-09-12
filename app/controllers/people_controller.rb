@@ -26,9 +26,9 @@ class PeopleController < ApplicationController
   
   def search
     unless params[:term] == nil 
-      @people = Person.search(params[:term])
+      @people = Person.order(session[:filter]).search(params[:term])
       if @people == []
-	flash.now[:notice] = "No Search Results Found"
+	flash.now[:warning] = "No Search Results Found"
       end
     end
      respond_to do |format|
@@ -42,10 +42,7 @@ class PeopleController < ApplicationController
   def show
     @person = Person.find(params[:id])
     
-      flash[:notice] = "No Search Results Found"
-    
-    
-    respond_to do |format|
+   respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @person }
     end

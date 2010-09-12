@@ -8,7 +8,7 @@ class Person < ActiveRecord::Base
   def self.search(name)
 #     e = []
 #     Person.column_names[1..7].each do |d|
-       where('first_name  like ?', "%#{name}%")+where('last_name like ?', "%#{name}%")
+       where('first_name  like ?', "%#{name}%")
 #     end
 #     e
   end

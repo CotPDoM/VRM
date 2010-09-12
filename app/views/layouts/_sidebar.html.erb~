@@ -14,12 +14,13 @@
 
 
 <div id=feedback>
-    <div class="example" id="demo-effect-blindup" onclick="new Effect.Fade('demo-effect-blindup'); new Effect.Grow('feedback_form');"> <!-- Effect.replace_html('feedback', :partial => "feedback");">-->
+    <div class="example" id="demo-effect-blindup" onclick="new Effect.Fade('demo-effect-blindup',{duration: 0.3}); new Effect.Grow('feedback_form', {duration:0.3});"> <!-- Effect.replace_html('feedback', :partial => "feedback");">-->
       <a><img src="../images/blank.gif" alt="feedback"></a>
       <img alt="Feedback" src="/images/feedback2.png" style="display:none;" />
-    </div
+    </div>
+    <div id=feedback_form style="display: none;">
+      <%= render "/layouts/feedback" %>
+    </div>
 </div>
 
-<div id=feedback_form style="display: none;">
-  <%= render "/layouts/feedback" %>
-</div>
+

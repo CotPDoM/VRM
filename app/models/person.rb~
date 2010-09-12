@@ -6,11 +6,11 @@ class Person < ActiveRecord::Base
   validates_inclusion_of :role, :in => ['Potential','Leader','Team 100', 'Admin', 'Root']
 
   def self.search(name)
-    e = []
-    Person.column_names[1..7].each do |d|
-      e += where('d  like ?', "%#{name}%")
-    end
-    e
+#     e = []
+#     Person.column_names[1..7].each do |d|
+       where('first_name  like ?', "%#{name}%")+where('last_name like ?', "%#{name}%")
+#     end
+#     e
   end
 end
 

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     
     def feedback_form
       if params[:msg]
-	mail = Feedback.feedback(user_name,params[:type],params[:msg])
+	mail = Feedback.feedback(current_user,params[:type],params[:msg])
 	Rails.logger.info("HEADER: #{mail.header}")
 	mail.deliver
 	flash.now[:notice]="Your message has been recieved"

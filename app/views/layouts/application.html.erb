@@ -18,7 +18,7 @@
       <%= render "layouts/sidebar" %>
     </div>
     <div id="content">
-      <p> <%= flash[:notice] %></p>
+      <%= render 'layouts/flash', :flash => flash %>
       <%= yield %>
     </div>
   </div>
