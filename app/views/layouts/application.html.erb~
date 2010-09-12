@@ -9,7 +9,7 @@
 
 <body>
   <div id="header">
-    <h1><%= link_to root_url do %>VolunSold<% end %></h1>
+    <h1 style="color=black><%= link_to root_url do %>VolunSold<% end %></h1>
   </div>
 <!--  Main section-->
   <div id="main-body">
@@ -18,9 +18,7 @@
       <%= render "layouts/sidebar" %>
     </div>
     <div id="content">
-      <div id='flash_notice'>
-	<p> <%= flash[:notice] %></p>
-      </div>
+      <%= render 'layouts/flash', :flash => flash %>
       <%= yield %>
     </div>
   </div>

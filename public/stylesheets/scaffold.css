@@ -101,7 +101,12 @@ ul, ol {
   font-size: 110%;
 }
 
-#header.a{ color : black;}
+#title a{
+    color: white;
+    text-decoration:none;
+}
+#title a:hover{ 
+    color:#195e92;}
 
 #main-body {
 	width: 97%;
@@ -144,6 +149,11 @@ ul, ol {
 
 }
 
+#search_term {
+  background-color: #F2F5A9;
+  border: 1px solid #424242;
+  padding: 2px;
+}
 #footer {
 	color: #fff;
 	background: #237cbe;

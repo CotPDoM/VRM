@@ -6,15 +6,21 @@ class PeopleController < ApplicationController
   # GET /people.xml
   def index
     session[:filter] ||= :first_name
-    
-    if params[:filter]
+    session[:term] ||= nil
+     
+   if params[:filter]
       if session[:filter] == params[:filter]
 	session[:filter] = params[:filter] + " desc"
       else
 	session[:filter] = params[:filter]
       end
     end
-    @people = Person.order(session[:filter])
+    
+    if session[:term]
+      @people = Person.order(session[:filter]).search(session[:term])
+    else
+      @people = Person.order(session[:filter])
+    end
 #     Rails.logger.info("PARAMS: #{params.inspect}")
 #     Rails.logger.info("SESSION: #{session.inspect}")
 
@@ -26,6 +32,7 @@ class PeopleController < ApplicationController
   
   def search
     unless params[:term] == nil 
+      session[:term]=params[:term]
       @people = Person.order(session[:filter]).search(params[:term])
       if @people == []
 	flash.now[:warning] = "No Search Results Found"
@@ -37,6 +44,16 @@ class PeopleController < ApplicationController
     end
   end
 
+  def clear_search
+    session[:term] = nil
+    flash.now[:notice]="Search cleared"
+    @people = Person.order(session[:filter])
+    respond_to do |format|
+      format.html { render :action => :index}
+#      format.xml  { render :xml => @events }
+    end
+  end
+    
   # GET /people/1
   # GET /people/1.xml
   def show

@@ -1,26 +1,18 @@
-<%= form_tag(search_people_path, :method => "get") do %>
-  <%= label_tag(:term, "Search for") %>
-  <%= text_field_tag(:term) %>
-  <%= submit_tag("Search") %>
-<% end %> 
-<br />
-<p>
 <% if logged_in? %>
+  <%= form_tag(search_people_path, :method => "get") do %>
+    <%= label_tag(:term, "Search for") %>
+    <%= text_field_tag(:term) %>
+    <%= submit_tag("Search") %>
+  <% end %> 
+  <br />
+  <p>
   Hello <%= user_name %>
   <%= link_to "Logout?", logout_path, {:method => :delete} %>
+  <%=  render "/layouts/feedback" %>
 <% else %>
-  <%= link_to "Login", login_path -%> or <%= link_to "Sign up", new_user_path %>
+  <p>
+    <%= link_to "Login", login_path -%> or <%= link_to "Sign up", new_user_path %>
+  </p>
 <% end %>
-
-
-<div id=feedback>
-    <div class="example" id="demo-effect-blindup" onclick="new Effect.Fade('demo-effect-blindup',{duration: 0.3}); new Effect.Grow('feedback_form', {duration:0.3});"> <!-- Effect.replace_html('feedback', :partial => "feedback");">-->
-      <a><img src="../images/blank.gif" alt="feedback"></a>
-      <img alt="Feedback" src="/images/feedback2.png" style="display:none;" />
-    </div>
-    <div id=feedback_form style="display: none;">
-      <%= render "/layouts/feedback" %>
-    </div>
-</div>
 
 

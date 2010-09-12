@@ -4,11 +4,11 @@ Practise::Application.routes.draw do |map|
   
   resources :users
   match 'create' => 'sessions#create', :as => :create, :method => :post
-  resource  :session do
-    member do
-      post :create
-    end
-  end
+#   resource  :session do
+#     member do
+#       post :create
+#     end
+#   end
     
    match 'login' => 'sessions#new', :as => :login
    match 'logout' => 'sessions#destroy', :as => :logout

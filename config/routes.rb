@@ -16,6 +16,7 @@ Practise::Application.routes.draw do |map|
   resources :people do
     collection do 
       get :search
+      post :clear_search
     end
   end
   

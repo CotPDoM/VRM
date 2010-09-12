@@ -1,4 +1,9 @@
-<h1>Listing people</h1>
+<h1 style="display:inline">Listing people</h1>
+<% if session[:term] -%>
+  <div style="display:inline">Search= <span id="search_term"><%=session[:term]-%> </span>
+  <%= button_to "clear", :action => :clear_search %></div>
+<% end -%>
+
 <table>
   <tr>
     <% Person.column_names[1..7].each do |d| %>  
@@ -25,10 +30,6 @@
   <% end %>
 
 </table>
-
-<%= @people.inspect %>
-
 <br />
-
 <%= link_to 'New Person', new_person_path %>
 
