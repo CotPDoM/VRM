@@ -15,7 +15,7 @@ class Feedback < ActionMailer::Base
              :subject => "[~VRM] New idea from " + user.name)
 	Rails.logger.info("Takes case :bug")
       when "Suggestion" then
-	mail (:to => "nick@pccrovers.com",
+	mail(:to => "nick@pccrovers.com",
 	      :from => @user.email,
 	      :subject => "[~VRM] New idea from " + user.name)
 	Rails.logger.info("Takes case :suggestion")

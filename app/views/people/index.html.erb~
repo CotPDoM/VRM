@@ -1,6 +1,6 @@
 <h1 style="display:inline">Listing people</h1>
 <% if session[:term] -%>
-  Search= <span id="search_term"><%=session[:term] -%></span> <%= link_to clear_search_people_path, :method=>:post do %><%= image_tag('/images/icons/cancel.png') %><small>Clear Search</small><% end %>
+  Search= <span id="search_term"><%=session[:term] -%></span> <%= link_to (clear_search_people_path, :method=>:post) do %><%= image_tag('/images/icons/cancel.png') %><small>Clear Search</small><% end %>
 <% end -%>
 
 <table>

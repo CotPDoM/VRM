@@ -1,6 +1,6 @@
 <h1 style="display:inline">Listing people</h1>
 <% if session[:term] -%>
-  Search= <span id="search_term"><%=session[:term] -%></span> <%= link_to (clear_search_people_path, :method=>:post) do %><%= image_tag('/images/icons/cancel.png') %><small>Clear Search</small><% end %>
+  Search= <span id="search_term"><%=session[:term] -%></span> <%= link_to (clear_search_people_path, :method=>:post) do %><%= image_tag('cancel.png') %><small>Clear Search</small><% end %>
 <% end -%>
 
 <table>
@@ -23,8 +23,8 @@
       <td><%= person.city %></td>
       <td><%= person.role %></td>
       
-      <td><%= link_to edit_person_path(person) do %><%= image_tag('/images/icons/pencil.png') %><% end %></td>
-      <td><%= link_to person, :confirm => 'Are you sure?', :method => :delete do %><%= image_tag('/images/icons/delete.png') %><% end %></td>
+      <td><%= link_to edit_person_path(person) do %><%= image_tag('pencil.png') %><% end %></td>
+      <td><%= link_to person, :confirm => 'Are you sure?', :method => :delete do %><%= image_tag('delete.png') %><% end %></td>
     </tr>
   <% end %>
 </table>
