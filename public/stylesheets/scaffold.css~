@@ -7,7 +7,6 @@
  * combination in your applications.
  */
 
-/* @import "/stylesheets/ie.css"; */
 
 * {
  	margin: 0;
@@ -102,7 +101,7 @@ ul, ol {
   font-size: 110%;
 }
 
-#header.a{ color : black}
+#header.a{ color : black;}
 
 #main-body {
 	width: 97%;
@@ -243,6 +242,31 @@ ul, ol {
   text-decoration: none;
 }
 
+
+/*Feedback */
+#feedback {
+  position:fixed; 
+  top:35%;
+  right:0px;
+  border:2px #029cd2 solid;
+  padding-bottom:0;
+}
+#feedback a img,
+#feedback a:link img,
+#feedback a:visited img {
+    border: none;
+    width: 34px;
+    height: 127px;
+    background-image: url(../images/feedback.png);
+    background-position: top left;
+}
+
+#feedback a:hover img,
+#feedback a:focus img,
+#feedback a:active img,
+#feedback a.active img {
+    background-position: top right;
+}
 /* FOOTER */
 
 #footer a {
@@ -264,7 +288,7 @@ ul, ol {
 }
 
 #banner h1 {
-  font-size: 220%;  
+  font-size: 220%;
 }
 
 #banner p {

@@ -9,7 +9,7 @@
 
 <body>
   <div id="header">
-    <%= link_to root_url do %><h1>VolunSold</h1><% end %>
+    <h1><%= link_to root_url do %>VolunSold<% end %></h1>
   </div>
 <!--  Main section-->
   <div id="main-body">

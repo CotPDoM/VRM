@@ -12,5 +12,14 @@
   <%= link_to "Login", login_path -%> or <%= link_to "Sign up", new_user_path %>
 <% end %>
 
-<!-- #<%= render 'layouts/feedback' %> -->
 
+<div id=feedback>
+    <div class="example" id="demo-effect-blindup" onclick="new Effect.Fade('demo-effect-blindup'); new Effect.Grow('feedback_form');"> <!-- Effect.replace_html('feedback', :partial => "feedback");">-->
+      <a><img src="../images/blank.gif" alt="feedback"></a>
+      <img alt="Feedback" src="/images/feedback2.png" style="display:none;" />
+    </div
+</div>
+
+<div id=feedback_form style="display: none;">
+  <%= render "/layouts/feedback" %>
+</div>
