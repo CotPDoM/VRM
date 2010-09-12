@@ -9,7 +9,7 @@
 Person.create!(
   :first_name=>'Nick',
   :last_name=>'Pearson',
-  :phone_number=>'7782311022',
+  :number=>'7782311022',
   :email=>'nick@pccrovers.com',
   :postal_code=>'V6H 1N9',
   :city=>'Vancouver',
@@ -18,7 +18,7 @@ Person.create!(
 
 Person.create!(
   :first_name=>'Bethany',
-  :phone_number=>'6044698785',
+  :number=>'6044698785',
   :postal_code=>'',
   :city=>'Richmond',
   :role=>'Leader'
@@ -33,7 +33,7 @@ Person.create!(
 Person.create!(
   :first_name=>'Richard',
   :last_name=>'Toth',
-  :phone_number=>'6049991221',
+  :number=>'6049991221',
   :email=>'Rich@foo.com',
   :city=>'North Vancouver',
   :role=>'Potential'
@@ -42,7 +42,7 @@ Person.create!(
 Person.create!(
   :first_name=>'Teniya',
   :last_name=>'Booth',
-  :phone_number=>'7782514786',
+  :number=>'7782514786',
   :email=>'Tdot@foo.com',
   :city=>'Vancouver',
   :role=>'Potential'
@@ -51,7 +51,7 @@ Person.create!(
 Person.create!(
   :first_name=>'Kevin',
   :last_name=>'Li',
-  :phone_number=>'6048893293',
+  :number=>'6048893293',
   :email=>'kevin.li@pccrovers.com',
   :city=>'Richmond',
   :role=>'Team 100'
@@ -74,7 +74,7 @@ Person.create!(
 Person.create!(
   :first_name=>'Thomas',
   :last_name=>'Rather',
-  :phone_number=>'7789983562',
+  :number=>'7789983562',
   :city=>'Burnaby',
   :role=>'Potential'
 )
@@ -89,7 +89,7 @@ Person.create!(
 Person.create!(
   :first_name=>'Jessica',
   :last_name=>'Thompson',
-  :phone_number=>'7785417236',
+  :number=>'7785417236',
   :email=>'Jess@foo.com',
   :postal_code=>'V5R 3E4',
   :city=>'Burnaby',
