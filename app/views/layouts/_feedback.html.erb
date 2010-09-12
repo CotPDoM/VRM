@@ -1,0 +1,18 @@
+<div id=feedback>
+    <div class="example" id="demo-effect-blindup" onclick="new Effect.Fade('demo-effect-blindup',{duration: 0.3}); new Effect.Grow('feedback_form', {duration:0.3});">
+      <a><img src="/images/blank.gif" alt="feedback"></a>
+      <img alt="Feedback" src="/images/feedback2.png" style="display:none;" />
+    </div>
+    <div id=feedback_form style="display: none;">
+      <%= form_tag feedback_form, :remote => true   do %>
+	<div style="float: right; " onclick="new Effect.BlindLeft('feedback_form', {duration:0.3}); new Effect.Appear('demo-effect-blindup');"><a style="text-decoration:none;">X</a></div>
+	<label>Feedback</label>
+	<%= radio_button_tag(:type, "Bug") -%>Bug
+	<%= radio_button_tag(:type, "Suggestion", true) -%>Suggestion
+	<p>
+	  <%= text_area_tag(:msg, params[:msg], {:rows => '5', :value=>""}) %>
+	</p>
+	<%= submit_tag("Let them know",  :onclick=>"new Effect.Puff('feedback_form'); new Effect.Appear('demo-effect-blindup');" )%>
+      <% end %>
+    </div>
+</div>
